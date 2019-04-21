@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "highlight.js": "^9.15.6",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-autobind": "^1.0.6",
+    "react-copy-code": "^2.0.5",
     "react-dom": "^16.8.6",
     "react-scripts": "2.1.8",
     "styled-components": "^4.2.0",
@@ -19,7 +21,6 @@
     "@babel/plugin-transform-runtime": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
-    "eslint": "^5.16.0",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-react": "^7.12.4"
   },
