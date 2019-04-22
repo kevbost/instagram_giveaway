@@ -1,8 +1,8 @@
 {
   "name": "my-app",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
-  "homepage" : "http://kevbost.github.io/instagram_giveaway",
+  "homepage": "http://kevbost.github.io/instagram_giveaway",
   "dependencies": {
     "highlight.js": "^9.15.6",
     "prop-types": "^15.7.2",
