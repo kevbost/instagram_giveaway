@@ -1,16 +1,22 @@
 import React, { Component } from 'react'
-import logo from './logo.svg'
+import autobind from 'react-autobind'
+import GlobalStyle from './utils/GlobalStyle'
 import './App.css'
-import CodeBlock from 'react-copy-code'
+
+import CodeContainer from './components/CodeContainer'
 
 class App extends Component {
+  constructor() {
+    super()
+    autobind( this )
+  }
+
   render() {
     return (
-      <div className="App">
-        <CodeBlock innerHtml>
-          <pre><div>{'wow'}</div></pre>
-        </CodeBlock>
-      </div>
+      <React.Fragment>
+        <GlobalStyle />
+        <CodeContainer />
+      </React.Fragment>
     )
   }
 }
