@@ -79,7 +79,7 @@ class CodeContainer extends React.Component {
   }
 
   componentDidMount() {
-    fetch( '/gistCode.txt' )
+    fetch( 'https://kevinbost.com/instagram_giveaway/gistCode.txt' )
       .then( ( file ) => { return file.text() })
       .then( text => {
         this.setState({

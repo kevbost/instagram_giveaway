@@ -1,5 +1,5 @@
 const copyToClipboard = () => {
-  fetch( '/gistCode.txt' )
+  fetch( 'https://kevinbost.com/instagram_giveaway/gistCode.txt' )
     .then( ( file ) => { return file.text() })
     .then( text => {
       const el = document.createElement( 'textarea' ) // Create a <textarea> element

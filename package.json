@@ -2,6 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "homepage" : "http://kevbost.github.io/instagram_giveaway",
   "dependencies": {
     "highlight.js": "^9.15.6",
     "prop-types": "^15.7.2",
@@ -22,10 +23,13 @@
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
     "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-react": "^7.12.4"
+    "eslint-plugin-react": "^7.12.4",
+    "gh-pages": "^2.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
