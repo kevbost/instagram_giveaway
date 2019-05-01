@@ -7,6 +7,8 @@ import copyToClipboard from '../utils/copyToClipboard'
 import Highlight from 'react-highlight'
 import '../../node_modules/highlight.js/styles/github-gist.css'
 
+const gistPath = 'https://gist.githubusercontent.com/kevbost/3b2806d56dc084e6a4ec9a420cced359/raw/3dec2ab1e662b041da644b1a8a415ca55bbf48a4/instagram_contest_winner.js'
+
 // eslint-disable-next-line space-in-parens
 const StyledPre = styled(Highlight)`
   margin: 0;
@@ -23,13 +25,11 @@ const Gist = ( props ) => {
   )
 }
 Gist.propTypes = {
-  gistCode: PropTypes.string
+  gistCode: PropTypes.string.isRequired
 }
 
 // eslint-disable-next-line space-in-parens
 const StyledBox = styled(Box)`
-  /* box-shadow: 0 2px 16px rgba(0, 0, 0, 0.25); */
-  /* padding: 1rem; */
   margin: 0 auto;
 `
 
@@ -75,11 +75,11 @@ class CodeContainer extends React.Component {
       copied: true
     })
 
-    return copyToClipboard()
+    return copyToClipboard( gistPath )
   }
 
   componentDidMount() {
-    fetch( 'https://kevinbost.com/instagram_giveaway/gistCode.txt' )
+    fetch( gistPath )
       .then( ( file ) => { return file.text() })
       .then( text => {
         this.setState({
@@ -106,7 +106,6 @@ class CodeContainer extends React.Component {
               }}
             >
               <h2>{'INSTRUCTIONS'}</h2>
-
               <ol>
                 <li>
                   {'Open chrome\'s javascript console'}
@@ -115,18 +114,10 @@ class CodeContainer extends React.Component {
                     <li>{'Mac: Cmd + Option + J'}</li>
                   </ul>
                 </li>
-                <li>
-                  {'Copy the code below (click the button)'}
-                </li>
-                <li>
-                  {'Paste into the javascript console'}
-                </li>
-                <li>
-                  {'???'}
-                </li>
-                <li>
-                  {'Profit'}
-                </li>
+                <li>{'Copy the code below (click the button)'}</li>
+                <li>{'Paste into the javascript console'}</li>
+                <li>{'???'}</li>
+                <li>{'Profit'}</li>
               </ol>
             </StyledCard>
             <StyledCard>
@@ -138,11 +129,8 @@ class CodeContainer extends React.Component {
             <StyledCard p={3}>
               <h2>{'NOTES'}</h2>
               <p>{'This function should work for any instagram post. Use it by opening Chrome\'s javascript console and pasting all of this code (see instructions)'}</p>
-
               <p>{'All comments are not immediately visible. The code will automatically click the "show more" button for you. It could take some time depending on how many comments there are, just wait. Once all comments have been made available, it will then choose a random commenter by username.'}</p>
-
               <p>{'Math.random() creates a random number between 0 & 1, multiply that random number by how many comments exist, round that new number down using Math.floor(), return the person at position people[ randomNumber ].'}</p>
-
               <p>{'For the sticklers out there, the reason this is so convoluted is for validation and message handling. It\'s users aren\'t programmers, instructions are logged if there is an error.'}</p>
             </StyledCard>
           </StyledBox>
