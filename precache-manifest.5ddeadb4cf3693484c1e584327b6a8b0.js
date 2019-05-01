@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "0468898cfaf570e636c1",
+    "revision": "f7d1019fc2524dda24b6",
     "url": "/instagram_giveaway/static/css/main.be9f2b56.chunk.css"
   },
   {
-    "revision": "0468898cfaf570e636c1",
-    "url": "/instagram_giveaway/static/js/main.47d98beb.chunk.js"
+    "revision": "f7d1019fc2524dda24b6",
+    "url": "/instagram_giveaway/static/js/main.15a8f0ab.chunk.js"
   },
   {
     "revision": "1205bba7d87ec4f820ac",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/instagram_giveaway/static/js/2.063af2d8.chunk.js"
   },
   {
-    "revision": "25105dcb6f9ae2de7868a394d639c5ff",
+    "revision": "332e799a89a2ea9de8951342ed7768cf",
     "url": "/instagram_giveaway/index.html"
   }
 ];
