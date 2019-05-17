@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/instagram_giveaway/precache-manifest.5ddeadb4cf3693484c1e584327b6a8b0.js"
+  "/instagram_giveaway/precache-manifest.56cec21b79b61e8ac808ca796bfcdc09.js"
 );
 
 workbox.clientsClaim();
