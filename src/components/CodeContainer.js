@@ -7,7 +7,7 @@ import copyToClipboard from '../utils/copyToClipboard'
 import Highlight from 'react-highlight'
 import '../../node_modules/highlight.js/styles/github-gist.css'
 
-const gistPath = 'https://gist.githubusercontent.com/kevbost/3b2806d56dc084e6a4ec9a420cced359/raw/3dec2ab1e662b041da644b1a8a415ca55bbf48a4/instagram_contest_winner.js'
+const gistPath = 'https://gist.githubusercontent.com/kevbost/3b2806d56dc084e6a4ec9a420cced359/raw'
 
 // eslint-disable-next-line space-in-parens
 const StyledPre = styled(Highlight)`
