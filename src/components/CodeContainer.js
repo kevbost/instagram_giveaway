@@ -97,7 +97,7 @@ class CodeContainer extends React.Component {
             textAlign: 'center'
           }}
         >{'Instagram Contest Winner'}</h1>
-        <Flex mb={5}>
+        <Flex mb={4} px={4}>
           <StyledBox width={[ 1, 1, 3/4 ]}>
             <StyledCard
               p={3}
