@@ -7,7 +7,6 @@ import { AnimatedText } from './AnimatedText'
 import {
   StyledBox,
   StyledCard,
-  // StyledPageTitle,
   TitleWrapper,
   CopyButton
 } from './styled'
@@ -52,11 +51,8 @@ class CodeContainer extends React.Component {
       <div>
         <TitleWrapper>
           <AnimatedText
-            textColor="rgba(253,89,73, 0.5)"
+            textColor="rgba(253, 89, 73, 0.5)"
             overlayColor="#fff"
-            // overlayColor="#d40092"
-            // overlayColor="#fd5949"
-            // overlayColor="#9c3dca"
           >
             <Text
               fontSize={[ '11vw', '10vw', '10vw', '6.4rem' ]}

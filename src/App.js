@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import autobind from 'react-autobind'
 import GlobalStyle from './utils/GlobalStyle'
+import GithubCorner from './components/GithubCorner'
 import './App.css'
 
 import CodeContainer from './components/CodeContainer'
@@ -18,6 +19,7 @@ class App extends Component {
     return (
       <StyledAppWrapper>
         <GlobalStyle />
+        <GithubCorner />
         <CodeContainer />
       </StyledAppWrapper>
     )

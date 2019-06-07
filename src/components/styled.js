@@ -12,7 +12,7 @@ export const StyledAppWrapper = styled.div`
       rgba(255, 255, 0, 1) 100%
     ),
     /* radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%), */
-    url(/noise.svg);
+    url(./noise.svg);
 `
 
 // eslint-disable-next-line space-in-parens
@@ -24,32 +24,11 @@ export const StyledPre = styled(Highlight)`
 `
 
 // eslint-disable-next-line space-in-parens
-export const StyledPageTitle = styled(Text).attrs({
-  fontSize: [ '11vw', '10vw', '10vw', '6.4rem' ]
-})`
-  /* font-size: 3vw; */
-  margin: 0 auto;
-  padding: 5rem 0;
-  text-align: center;
-  color: #3f4245;
-  font-family: "Montserrat", sans-serif;
-  text-transform: uppercase;
-  font-weight: 900;
-  line-height: .9;
-  text-shadow:
-    -1px -1px 0 white,
-      1px -1px 0 white,
-      -1px 1px 0 white,
-        1px 1px 0 white;
-`
-
-
-// eslint-disable-next-line space-in-parens
 export const TitleWrapper = styled.div`
   text-align: center;
   display: flex;
   justify-content: center;
-  padding: 5rem 0;
+  padding: 5rem 0 3rem;
 `
 
 // eslint-disable-next-line space-in-parens
@@ -59,7 +38,7 @@ export const StyledBox = styled(Box)`
 
 // eslint-disable-next-line space-in-parens
 export const StyledCard = styled(Box)`
-  margin: 2rem auto 0;
+  margin: 2rem 0;
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
