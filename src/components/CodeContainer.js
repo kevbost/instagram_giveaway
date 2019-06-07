@@ -1,64 +1,19 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import autobind from 'react-autobind'
-import styled from 'styled-components'
-import { Flex, Box, Text } from 'rebass'
+import { Flex, Text } from 'rebass'
 import copyToClipboard from '../utils/copyToClipboard'
-import Highlight from 'react-highlight'
+import Gist from './Gist'
+import { AnimatedText } from './AnimatedText'
+import {
+  StyledBox,
+  StyledCard,
+  // StyledPageTitle,
+  TitleWrapper,
+  CopyButton
+} from './styled'
 import '../../node_modules/highlight.js/styles/github-gist.css'
 
 const gistPath = 'https://gist.githubusercontent.com/kevbost/3b2806d56dc084e6a4ec9a420cced359/raw'
-
-// eslint-disable-next-line space-in-parens
-const StyledPre = styled(Highlight)`
-  margin: 0;
-  padding: 1rem;
-  height: 10rem;
-  overflow: auto;
-`
-
-const Gist = ( props ) => {
-  return (
-    <StyledPre className="js">
-      {props.gistCode}
-    </StyledPre>
-  )
-}
-Gist.propTypes = {
-  gistCode: PropTypes.string.isRequired
-}
-
-// eslint-disable-next-line space-in-parens
-const StyledBox = styled(Box)`
-  margin: 0 auto;
-`
-
-// eslint-disable-next-line space-in-parens
-const StyledCard = styled(Box)`
-  margin: 2rem auto 0;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
-`
-
-// eslint-disable-next-line space-in-parens
-const CopyButton = styled(Text)`
-  cursor: pointer;
-  text-align: center;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-  background-color: ${props => { return props.copied ? 'red' : '#75AADA' }};
-  transition: background-color ease-out 0.25s, color ease-out 0.25s;
-  user-select: none;
-  font-size: 20px;
-  padding: 10px;
-  font-weight: bold;
-  color: white;
-
-  &:active {
-    background-color: blue;
-  }
-`
 
 class CodeContainer extends React.Component {
   constructor() {
@@ -88,16 +43,31 @@ class CodeContainer extends React.Component {
       })
   }
 
+  componentWillMount() {
+    clearInterval( this.interval )
+  }
+
   render() {
     return (
-      <React.Fragment>
-        <h1
-          style={{
-            margin: '2rem 0',
-            textAlign: 'center'
-          }}
-        >{'Instagram Contest Winner'}</h1>
-        <Flex mb={4} px={4}>
+      <div>
+        <TitleWrapper>
+          <AnimatedText
+            textColor="rgba(253,89,73, 0.5)"
+            overlayColor="#fff"
+            // overlayColor="#d40092"
+            // overlayColor="#fd5949"
+            // overlayColor="#9c3dca"
+          >
+            <Text
+              fontSize={[ '11vw', '10vw', '10vw', '6.4rem' ]}
+            >{'IG Contest'}</Text>
+            <Text
+              fontSize={[ '15vw', '14vw', '14vw', '9rem' ]}
+            >{'Winner'}</Text>
+          </AnimatedText>
+        </TitleWrapper>
+
+        <Flex p={4} pb={5}>
           <StyledBox width={[ 1, 1, 3/4 ]}>
             <StyledCard
               p={3}
@@ -135,7 +105,7 @@ class CodeContainer extends React.Component {
             </StyledCard>
           </StyledBox>
         </Flex>
-      </React.Fragment>
+      </div>
     )
   }
 }

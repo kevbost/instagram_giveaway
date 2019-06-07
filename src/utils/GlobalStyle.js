@@ -1,6 +1,16 @@
 // global-style.js
 import { createGlobalStyle } from 'styled-components'
 import reboot from 'styled-reboot'
+// import Lato from './fonts/Lato/Lato-Regular.ttf'
+
+// injectGlobal`
+// @font-face {
+//   font-family: 'PTC55F';
+//   src: url(${myFont}) format('truetype');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+// `
 
 // Options are, of course, optional, these are the default options
 const options = {
@@ -30,7 +40,30 @@ const rebootCss = reboot( options )
 
 const GlobalStyle = createGlobalStyle`
   ${rebootCss}
-  /* other styles */
+  @font-face {
+    font-family: Lato;
+    src:  local("Lato"),
+          url(/fonts/Lato/Lato-Regular.ttf) format('truetype');
+    font-display: block;
+  }
+  @font-face {
+    font-family: Lato;
+    src:  local("Lato Black"),
+          url(/fonts/Lato/Lato-Black.ttf) format('truetype');
+    font-weight: 900;
+    font-display: block;
+  }
+  @font-face {
+    font-family: Montserrat;
+    src: url(/fonts/Montserrat/Montserrat-Regular.ttf) format('truetype');
+    font-display: block;
+  }
+  @font-face {
+    font-family: Montserrat;
+    src: url(/fonts/Montserrat/Montserrat-ExtraBold.ttf) format('truetype');
+    font-weight: 900;
+    font-display: block;
+  }
 `
 
 export default GlobalStyle

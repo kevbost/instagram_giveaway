@@ -4,6 +4,9 @@ import GlobalStyle from './utils/GlobalStyle'
 import './App.css'
 
 import CodeContainer from './components/CodeContainer'
+import {
+  StyledAppWrapper
+} from './components/styled'
 
 class App extends Component {
   constructor() {
@@ -13,10 +16,10 @@ class App extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <StyledAppWrapper>
         <GlobalStyle />
         <CodeContainer />
-      </React.Fragment>
+      </StyledAppWrapper>
     )
   }
 }
