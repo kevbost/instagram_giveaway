@@ -3,7 +3,7 @@ import React from 'react'
 const GithubCorner = props => {
   return (
     <a
-      href="https://your-url"
+      href="https://github.com/kevbost/instagram_giveaway"
       className="github-corner"
       aria-label="View source on GitHub"
     >
