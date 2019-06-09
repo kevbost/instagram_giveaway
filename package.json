@@ -6,7 +6,6 @@
   "dependencies": {
     "highlight.js": "^9.15.8",
     "prop-types": "^15.7.2",
-    "querystringify": "^2.1.1",
     "react": "^16.8.6",
     "react-anime": "^2.2.0",
     "react-autobind": "^1.0.6",
