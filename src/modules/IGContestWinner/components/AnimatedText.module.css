@@ -5,6 +5,7 @@
   --borderColor: #9c3dca;
   position: relative;
   cursor: default;
+  user-select: none;
 }
 
 .animatedTextContent {
@@ -13,7 +14,7 @@
   text-align: center;
   color: #2c2f31;
   color: #3c4144;
-  font-family: "Montserrat", sans-serif;
+  font-family: Montserrat;
   text-transform: uppercase;
   font-weight: 900;
   line-height: .9;
