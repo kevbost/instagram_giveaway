@@ -33,8 +33,7 @@ var prevCommentCount = 0
 var loadingCount = 0
 var loadingLimitBreak = 10
 var urlSinglePost = /(com\/p\/.*)/
-var { log } = console
-var { clear } = console
+var { log, clear } = console
 
 var reset = ( name ) => {
   clearInterval( name )

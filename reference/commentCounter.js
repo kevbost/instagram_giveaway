@@ -29,18 +29,22 @@ var infoStyle = 'background: green; color: white; font-size: x-large'
 var successStyle = 'background: #ffd052; color: black; font-size: x-large'
 
 var counter = '-'
+var commentCount = 0
+var prevCommentCount = 0
+var loadingCount = 0
+var loadingLimitBreak = 10
 var urlSinglePost = /(com\/p\/.*)/
 var { log } = console
-// var { clear } = console
+var allComments
 
 var reset = ( name ) => {
   clearInterval( name )
   // clear()
 }
 
-var loadingSpinner = () => {
+var loadingSpinner = ( type ) => {
   counter==='-'?counter='/':counter==='/'?counter='- ':counter==='- '?counter='\\':counter==='\\'&&( counter='-' )
-  log( `Loading... ${counter}` )
+  log( `Loading... ${commentCount} (${type})` )
 }
 
 var interval = setInterval( () => {
@@ -49,6 +53,8 @@ var interval = setInterval( () => {
   const button = document.querySelector( loadMoreButtonSelector )
   const loadingSvg = document.querySelectorAll( loadingSvgSelector )
   const testedUrlBool = urlSinglePost.test( window.location.href )
+
+  prevCommentCount = commentLength
 
   if ( testedUrlBool && articleLength > 1 ) {
     reset( interval )
@@ -63,15 +69,18 @@ var interval = setInterval( () => {
   } else if ( window.innerWidth < 736 ) {
     reset( interval )
     return log( '%cSo this is a weird quirk you\'ve somehow found. The comments aren\'t visible at this screen width. Make your browser window a little bigger and try again.', infoStyle )
-  } /* else if ( button ) {
-    clear() // super cool loading spinner, dont judge me
-    loadingSpinner()
-    return button.click()
-  } else if ( loadingSvg.length ) {
-    clear()
-    loadingSpinner()
+  } else if ( loadingSvg.length && loadingCount < loadingLimitBreak ) {
+    loadingCount++
+    // clear()
+    loadingSpinner( 'loadingSvg' )
     return
-  } */ else {
+  } else if ( button && prevCommentCount !== commentCount ) { // check if the new comment button is stuck
+    loadingCount = 0
+    // clear() // super cool loading spinner, dont judge me
+    loadingSpinner( 'button' )
+    commentCount = commentLength
+    return button.click()
+  } else {
     reset( interval )
     return isolateComments( [ ...document.querySelectorAll( commentSelector ) ] )
   }
@@ -106,17 +115,22 @@ var makeFunOfScriptRunner = () => {
   return log( `%c${randVideo()}`, 'font-size: x-large' )
 }
 
-// var pickWinner = ( people, totalComments ) => {
-//   // pick the winner! peow peow peeooowwww
-//   const num = people.length
-//   const WINNER = people[Math.floor( Math.random()*num )]
-//   reset( interval )
-//   log( `${totalComments - people.length} duplicate commenters removed` )
-//   log( `%cAnd the randomly selected winner out of ${num} ${num === 1 ? 'entry' : 'entries'} is...\n\n${WINNER.toUpperCase()} !!!!`, successStyle )
-//   log( `%chttps://www.instagram.com/${WINNER}/`, 'font-size: large' )
-// }
+var checkIfTen = ( input ) => {
+  const firstChar = input.toLowerCase().charAt( 0 )
+  const secondChar = input.toLowerCase().charAt( 1 )
+  const thirdChar = input.toLowerCase().charAt( 2 )
+
+  if ( firstChar === '#' && secondChar === '1' && thirdChar === '0' ) {
+    return true
+  } else if ( firstChar === '1' && secondChar === '0' ) {
+    return true
+  } else {
+    return false
+  }
+}
 
 var getCommentNumbers = ( comments ) => {
+  allComments = comments
 
   const matrix = {
     1: 0,
@@ -128,25 +142,16 @@ var getCommentNumbers = ( comments ) => {
     7: 0,
     8: 0,
     9: 0,
-    10: 0,
-    '1️⃣': 0,
-    '2️⃣': 0,
-    '3️⃣': 0,
-    '4️⃣': 0,
-    '5️⃣': 0,
-    '6️⃣': 0,
-    '7️⃣': 0,
-    '8️⃣': 0,
-    '9️⃣': 0,
-    '🔟': 0
+    10: 0
   }
-
-  console.log( comments )
 
   comments.map( x => {
     const firstChar = x.toLowerCase().charAt( 0 )
     const secondChar = x.toLowerCase().charAt( 1 )
 
+    if ( checkIfTen( x ) ) {
+      return matrix['10']++
+    }
     if ( firstChar === '#' ) {
       if ( Object.keys( matrix ).indexOf( secondChar ) > -1 ) {
         matrix[ secondChar ]++
@@ -154,7 +159,6 @@ var getCommentNumbers = ( comments ) => {
     } else if ( Object.keys( matrix ).indexOf( firstChar ) > -1 ) {
       matrix[ firstChar ]++
     }
-    // console.log( Object.keys( matrix ).indexOf( firstChar ) )
   })
 
   log( comments )
