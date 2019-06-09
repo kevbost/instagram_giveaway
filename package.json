@@ -6,6 +6,7 @@
   "dependencies": {
     "highlight.js": "^9.15.8",
     "prop-types": "^15.7.2",
+    "querystringify": "^2.1.1",
     "react": "^16.8.6",
     "react-anime": "^2.2.0",
     "react-autobind": "^1.0.6",
@@ -14,8 +15,8 @@
     "react-scripts": "3.0.1",
     "react-timer-mixin": "^0.13.4",
     "rebass": "^3.1.1",
-    "styled-components": "^4.2.1",
-    "styled-icons": "^8.0.0",
+    "styled-components": "^4.3.1",
+    "styled-icons": "^8.1.0",
     "styled-reboot": "^3.0.2"
   },
   "devDependencies": {
