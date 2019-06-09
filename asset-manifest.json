@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/instagram_giveaway/static/css/main.21a74dac.chunk.css",
-    "main.js": "/instagram_giveaway/static/js/main.46d0105f.chunk.js",
-    "main.js.map": "/instagram_giveaway/static/js/main.46d0105f.chunk.js.map",
+    "main.js": "/instagram_giveaway/static/js/main.8adba5a4.chunk.js",
+    "main.js.map": "/instagram_giveaway/static/js/main.8adba5a4.chunk.js.map",
     "runtime~main.js": "/instagram_giveaway/static/js/runtime~main.552f48a7.js",
     "runtime~main.js.map": "/instagram_giveaway/static/js/runtime~main.552f48a7.js.map",
     "static/css/2.ad187f9c.chunk.css": "/instagram_giveaway/static/css/2.ad187f9c.chunk.css",
-    "static/js/2.c1a5ada4.chunk.js": "/instagram_giveaway/static/js/2.c1a5ada4.chunk.js",
-    "static/js/2.c1a5ada4.chunk.js.map": "/instagram_giveaway/static/js/2.c1a5ada4.chunk.js.map",
+    "static/js/2.fb04905c.chunk.js": "/instagram_giveaway/static/js/2.fb04905c.chunk.js",
+    "static/js/2.fb04905c.chunk.js.map": "/instagram_giveaway/static/js/2.fb04905c.chunk.js.map",
     "index.html": "/instagram_giveaway/index.html",
-    "precache-manifest.f2f1d5c9eaa619463c7af9f9e9f47c4d.js": "/instagram_giveaway/precache-manifest.f2f1d5c9eaa619463c7af9f9e9f47c4d.js",
+    "precache-manifest.0640f7c4ff23e2a2d537d7bd065e504c.js": "/instagram_giveaway/precache-manifest.0640f7c4ff23e2a2d537d7bd065e504c.js",
     "service-worker.js": "/instagram_giveaway/service-worker.js",
     "static/css/2.ad187f9c.chunk.css.map": "/instagram_giveaway/static/css/2.ad187f9c.chunk.css.map",
     "static/css/main.21a74dac.chunk.css.map": "/instagram_giveaway/static/css/main.21a74dac.chunk.css.map"

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/instagram_giveaway/precache-manifest.f2f1d5c9eaa619463c7af9f9e9f47c4d.js"
+  "/instagram_giveaway/precache-manifest.0640f7c4ff23e2a2d537d7bd065e504c.js"
 );
 
 self.addEventListener('message', (event) => {
