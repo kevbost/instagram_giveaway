@@ -3,7 +3,7 @@ import autobind from 'react-autobind'
 import { Flex, Text } from 'rebass'
 import copyToClipboard from '../utils/copyToClipboard'
 import Gist from './Gist'
-import { AnimatedText } from './AnimatedText'
+import AnimatedText from './AnimatedText'
 import {
   StyledBox,
   StyledCard,

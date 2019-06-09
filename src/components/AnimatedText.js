@@ -78,4 +78,4 @@ AnimatedText.propTypes = {
   children: PropTypes.any
 }
 
-export { AnimatedText }
+export default AnimatedText
