@@ -1,5 +1,5 @@
 const copyToClipboard = ( gistPath ) => {
-  fetch( gistPath )
+  return fetch( gistPath )
     .then( ( file ) => { return file.text() })
     .then( text => {
       const el = document.createElement( 'textarea' ) // Create a <textarea> element

@@ -1,0 +1,25 @@
+<svg
+  xmlns='http://www.w3.org/2000/svg'
+  xmlns:xlink='http://www.w3.org/1999/xlink'
+  width='100%' height='100%'>
+
+    <filter id='n' x='0' y='0'>
+      <!-- <feTurbulence
+        type='noise'
+        numOctaves="5"
+        baseFrequency='.5'
+        stitchTiles='stitch'
+      /> -->
+      <feTurbulence
+        type="fractalNoise"
+        baseFrequency='.6'
+      />
+
+      <!-- <feDiffuseLighting in='noise' lighting-color='white' surfaceScale='2'>
+        <feDistantLight azimuth='45' elevation='60' />
+      </feDiffuseLighting> -->
+
+    </filter>
+
+    <rect width='100%' height='100%' filter="url(#n)" opacity="0.9"/>
+</svg>

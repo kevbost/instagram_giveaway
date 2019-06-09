@@ -4,7 +4,7 @@ import reboot from 'styled-reboot'
 
 // Options are, of course, optional, these are the default options
 const options = {
-  black: '#000',
+  black: '#313131',
   fontFamilyBase:
     '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
   fontFamilyMonospace:
@@ -12,7 +12,7 @@ const options = {
   fontSizeBase: '1rem',
   fontWeightBase: 400,
   lineHeightBase: 1.5,
-  bodyColor: '#212529',
+  bodyColor: '#313131',
   bodyBg: '#fff',
   headingsMarginBottom: '0.5rem',
   paragraphMarginBottom: '1rem',
@@ -30,7 +30,86 @@ const rebootCss = reboot( options )
 
 const GlobalStyle = createGlobalStyle`
   ${rebootCss}
-  /* other styles */
+  @font-face {
+    font-family: Montserrat;
+    src: url(./fonts/Montserrat/Montserrat-Regular.ttf) format('truetype');
+    font-display: block;
+  }
+  @font-face {
+    font-family: Montserrat;
+    src: url(./fonts/Montserrat/Montserrat-ExtraBold.ttf) format('truetype');
+    font-weight: 900;
+    font-display: block;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  *::selection {
+    background: blue;
+    color: white;
+  }
+
+  p {
+    line-height: 1.58;
+    letter-spacing: -.004em;
+  }
+
+  ol,
+  ul {
+    margin: 0;
+    list-style-position: outside;
+    padding-left: 1rem;
+  }
+
+  code {
+    font-size: 90%;
+  }
+
+  pre,
+  code {
+    margin: 0;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+      monospace;
+  }
+
+  /* --------github corners-------- */
+  .github-corner:hover .octo-arm {
+    animation: octocat-wave 2000ms ease-in-out
+  }
+  /* --------end github corners-------- */
+
+  @keyframes octocat-wave {
+    0%,
+    100% {
+      transform: rotate(0)
+    }
+    20%,
+    60% {
+      transform: rotate(-25deg)
+    }
+    40%,
+    80% {
+      transform: rotate(10deg)
+    }
+  }
+
+  @media (max-width:500px) {
+    .github-corner:hover .octo-arm {
+      animation: none
+    }
+
+    .github-corner .octo-arm {
+      animation: octocat-wave 560ms ease-in-out
+    }
+  }
 `
 
 export default GlobalStyle
