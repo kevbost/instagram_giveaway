@@ -109,7 +109,7 @@ class IGContestWinner extends React.Component {
               <p>{'Sometimes Instagram acts up and doesn\'t properly load the comments. If this happens, it will run the random comment generator but will advise review. There\'s not much that can be done other than waiting and trying again later.'}</p>
               <p>{'Math.random() creates a random number between 0 & 1, multiply that random number by how many comments exist, round that new number down using Math.floor(), return the person at position people[ randomNumber ].'}</p>
               <p>{'For the sticklers out there, the reason this is so convoluted is for validation and message handling. It\'s users aren\'t programmers, instructions are logged if there is an error.'}</p>
-              <p>{'If something is seriously wonko, leave an issue on the '}<a href="https://github.com/kevbost/instagram_giveaway/issues">{'github project page'}</a>{'.'}</p>
+              <p>{'If something is seriously '}<a href="https://youtu.be/ONB2MJMGXM8?t=53">{'wonko'}</a>{', leave an issue on the '}<a href="https://github.com/kevbost/instagram_giveaway/issues">{'github project page'}</a>{'.'}</p>
             </Card>
           </Box>
         </Flex>
