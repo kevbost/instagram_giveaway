@@ -30,24 +30,11 @@ const rebootCss = reboot( options )
 
 const GlobalStyle = createGlobalStyle`
   ${rebootCss}
-  @font-face {
-    font-family: Montserrat;
-    src: url(./fonts/Montserrat/Montserrat-Regular.ttf) format('truetype');
-    font-display: block;
-  }
-  @font-face {
-    font-family: Montserrat;
-    src: url(./fonts/Montserrat/Montserrat-ExtraBold.ttf) format('truetype');
-    font-weight: 900;
-    font-display: block;
-  }
 
   body {
     margin: 0;
     padding: 0;
-    font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-      sans-serif;
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Ubuntu", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
