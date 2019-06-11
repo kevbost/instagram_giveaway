@@ -1,3 +1,6 @@
+/* eslint-disable-next-line no-var */
+var removeDuplicates = true
+
 /**
  * This function should work for any instagram post.
  *   Use it by opening Chrome's javascript console and pasting all of this code. (see link below)
@@ -19,6 +22,7 @@
  */
 
 /* eslint-disable no-var,newline-before-return */
+var shouldConsoleClear = true
 var loadMoreButtonSelector = '[aria-label="Load more comments"]'
 var loadingSvgSelector = 'article svg'
 var userNameSelector = 'body > span#react-root > section > main article li h3'
@@ -36,9 +40,13 @@ var urlSinglePost = /(com\/p\/.*)/
 var { log } = console
 var { clear } = console
 
+var clearConsole = () => {
+  shouldConsoleClear? clear() : null
+}
+
 var reset = ( name ) => {
   clearInterval( name )
-  clear()
+  clearConsole()
 }
 
 var loadingSpinner = () => {
@@ -71,13 +79,13 @@ var interval = setInterval( () => {
     return log( '%cSo this is a weird quirk you\'ve somehow found. The comments aren\'t visible at this screen width. Make your browser window a little bigger and try again.', infoStyle )
   } else if ( loadingSvg.length && loadingCount < loadingLimitBreak ) {
     loadingCount++
-    clear()
+    clearConsole()
     loadingSpinner()
     return
   } else if ( button && prevCommentCount !== commentCount ) { // check if the new comment button is stuck
     loadingCount = 0
-    clear() // super cool loading spinner, dont judge me
-    loadingSpinner()
+    clearConsole()
+    loadingSpinner() // super cool loading spinner, dont judge me
     commentCount = commentLength
     return button.click()
   } else {
@@ -93,8 +101,12 @@ var isolateUsernames = ( peopleList ) => {
       userNames.push( x.innerText )
     }
   })
-  const uniqueList = [ ...new Set( userNames ) ]
-  return uniqueList.length ? pickWinner( uniqueList, userNames.length ) : makeFunOfScriptRunner()
+  if ( removeDuplicates ) {
+    const uniqueList = [ ...new Set( userNames ) ]
+    return uniqueList.length ? pickWinner( uniqueList, userNames.length ) : makeFunOfScriptRunner()
+  } else {
+    return userNames.length ? pickWinner( userNames, userNames.length ) : makeFunOfScriptRunner()
+  }
 }
 
 var randVideo = () => {
@@ -124,8 +136,8 @@ var pickWinner = ( people, totalComments ) => {
   const WINNER = people[Math.floor( Math.random()*num )]
   reset( interval )
   loadingCount >= loadingLimitBreak && log( '%cError: comments stopped loading properly, please review results.', errorStyle )
-  log( `${commentCount} total comments (excludes replies)` )
-  log( `${totalComments - people.length} duplicate commenters removed` )
+  log( `${commentCount} total comments (excludes replies, includes duplicates)` )
+  log( removeDuplicates ? `${totalComments - people.length} duplicate commenters removed` : 'duplicates not removed' )
   log( `%cAnd the randomly selected winner out of ${num} ${num === 1 ? 'entry' : 'entries'} is...\n\n${WINNER.toUpperCase()} !!!!`, successStyle )
   log( `%chttps://www.instagram.com/${WINNER}/`, 'font-size: large' )
 }
