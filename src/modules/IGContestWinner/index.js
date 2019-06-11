@@ -3,11 +3,12 @@ import autobind from 'react-autobind'
 import { Flex, Box, Text } from 'rebass'
 import copyToClipboard from '../../utils/copyToClipboard'
 import AnimatedText from './components/AnimatedText'
+import Checkbox from './components/Checkbox'
 import {
   TitleWrapper,
   CopyButton,
   CodeContainer
-} from './components/styled'
+} from './styled'
 import Card from '../../components/Card'
 import '../../../node_modules/highlight.js/styles/github-gist.css'
 
@@ -18,9 +19,30 @@ class IGContestWinner extends React.Component {
     super()
     autobind( this )
     this.state = {
+      checked: true,
       copied: false,
       copiedText: 'Copy to Clipboard',
       gistCode: ''
+    }
+  }
+
+  getCheckedState() {
+    if ( this.state.checked ) {
+      const gistText = this.state.gistCode.replace( /(var removeDuplicates = true)/, 'var removeDuplicates = false' )
+      this.setState( ( prevState, props ) => {
+        return {
+          gistCode: gistText,
+          checked: !prevState.checked
+        }
+      })
+    } else {
+      const gistText = this.state.gistCode.replace( /(var removeDuplicates = false)/, 'var removeDuplicates = true' )
+      this.setState( ( prevState, props ) => {
+        return {
+          gistCode: gistText,
+          checked: !prevState.checked
+        }
+      })
     }
   }
 
@@ -30,8 +52,7 @@ class IGContestWinner extends React.Component {
       copiedText: 'Copied!'
     })
 
-    return copyToClipboard( gistPath ).then( () => {
-
+    return copyToClipboard( this.state.gistCode ).then( () => {
       setTimeout( () => {
         this.setState({
           copiedText: 'Paste it into the console!'
@@ -57,7 +78,7 @@ class IGContestWinner extends React.Component {
       })
   }
 
-  componentWillMount() {
+  componentWillUnmount() {
     clearInterval( this.interval )
   }
 
@@ -95,6 +116,9 @@ class IGContestWinner extends React.Component {
                 <li>{'???'}</li>
                 <li>{'Profit'}</li>
               </ol>
+            </Card>
+            <Card mb={4} onClick={this.getCheckedState}>
+              <Checkbox label="Remove Duplicate Comments" />
             </Card>
             <Card mb={4}>
               <CodeContainer>{this.state.gistCode}</CodeContainer>

@@ -25,9 +25,7 @@ export const TitleWrapper = styled.div`
 export const CopyButton = styled(Text)`
   cursor: pointer;
   text-align: center;
-  /* border-bottom-left-radius: 8px; */
-  /* border-bottom-right-radius: 8px; */
-  background-color: ${props => { return props.copied ? 'red' : '#313131' }};
+  background-color: ${props => { return props.copied ? '#fd5949' : '#313131' }};
   transition: background-color ease-out 0.25s, color ease-out 0.25s;
   user-select: none;
   font-size: 20px;
