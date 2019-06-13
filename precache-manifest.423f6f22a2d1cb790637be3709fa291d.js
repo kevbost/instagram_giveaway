@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e88255a68aed0883e28dc2d84b974d5d",
+    "revision": "1bcd7c75ed0fa7209dd0792326df96e2",
     "url": "/instagram_giveaway/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/instagram_giveaway/static/css/2.ad187f9c.chunk.css"
   },
   {
-    "revision": "5d080b263608ccb1b1a5",
+    "revision": "f8e3e2f787b4e41178c2",
     "url": "/instagram_giveaway/static/css/main.da3b8349.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/instagram_giveaway/static/js/2.085fc89a.chunk.js"
   },
   {
-    "revision": "5d080b263608ccb1b1a5",
-    "url": "/instagram_giveaway/static/js/main.ed5f38e2.chunk.js"
+    "revision": "f8e3e2f787b4e41178c2",
+    "url": "/instagram_giveaway/static/js/main.73db03d6.chunk.js"
   },
   {
     "revision": "1205bba7d87ec4f820ac",
