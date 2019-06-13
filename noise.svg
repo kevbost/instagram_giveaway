@@ -12,7 +12,7 @@
       /> -->
       <feTurbulence
         type="fractalNoise"
-        baseFrequency='.6'
+        baseFrequency='.8'
       />
 
       <!-- <feDiffuseLighting in='noise' lighting-color='white' surfaceScale='2'>
