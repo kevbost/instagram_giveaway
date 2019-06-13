@@ -11,8 +11,8 @@ export const StyledGradientWrapper = styled.div`
       rgba(255, 0, 255, 0.5) 50%,
       rgba(255, 255, 0, 1) 100%
     ),
-    /* url(./noise.svg); */
-    url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAIklEQVQoU2NkYGD4z8DAwMiAA+CUgKmnjQIUN9HGChQPAwB5swIJcl6NNwAAAABJRU5ErkJggg==");
+    url(./noise.svg);
+    /* url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAIklEQVQoU2NkYGD4z8DAwMiAA+CUgKmnjQIUN9HGChQPAwB5swIJcl6NNwAAAABJRU5ErkJggg=="); */
 `
 
 // eslint-disable-next-line space-in-parens
