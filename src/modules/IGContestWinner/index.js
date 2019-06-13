@@ -7,7 +7,8 @@ import Checkbox from './components/Checkbox'
 import {
   TitleWrapper,
   CopyButton,
-  CodeContainer
+  CodeContainer,
+  StyledGradientWrapper
 } from './styled'
 import Card from '../../components/Card'
 import '../../../node_modules/highlight.js/styles/github-gist.css'
@@ -84,7 +85,7 @@ class IGContestWinner extends React.Component {
 
   render() {
     return (
-      <div>
+      <StyledGradientWrapper>
         <TitleWrapper>
           <AnimatedText
             textColor="rgba(253, 89, 73, 0.5)"
@@ -100,7 +101,12 @@ class IGContestWinner extends React.Component {
         </TitleWrapper>
 
         <Flex p={4} pb={5} justifyContent="center">
-          <Box width={[ 1, 1, 3/4 ]}>
+          <Box
+            width={[ 1, 1, '45rem' ]}
+            style={{
+              zIndex: 1
+            }}
+          >
             <Card p={3} mb={4}>
               <h2>{'INSTRUCTIONS'}</h2>
               <ol>
@@ -137,7 +143,7 @@ class IGContestWinner extends React.Component {
             </Card>
           </Box>
         </Flex>
-      </div>
+      </StyledGradientWrapper>
     )
   }
 }
