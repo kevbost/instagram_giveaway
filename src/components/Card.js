@@ -8,7 +8,8 @@ const Card = styled(Box)`
   /* margin: 2rem 0; */
   /* background-color: rgba(255, 255, 255, 0.5); */
   background-color: #fff;
-  box-shadow: 0 8px 17px 2px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+  position: relative;
 `
 
 export default Card

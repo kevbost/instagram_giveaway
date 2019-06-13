@@ -41,7 +41,7 @@ var { log } = console
 var { clear } = console
 
 var clearConsole = () => {
-  shouldConsoleClear? clear() : null
+  shouldConsoleClear ? clear() : null
 }
 
 var reset = ( name ) => {
@@ -52,7 +52,7 @@ var reset = ( name ) => {
 var loadingSpinner = () => {
   counter==='-'?counter='/':counter==='/'?counter='- ':counter==='- '?counter='\\':counter==='\\'&&( counter='-' )
   log( `Comments: ${commentCount}` )
-  log( `Loading... ${counter}` )
+  shouldConsoleClear && log( `Loading... ${counter}` )
 }
 
 var interval = setInterval( () => {
@@ -117,9 +117,9 @@ var randVideo = () => {
     'https://youtu.be/kCaf9rWYmAg', // bilmuri there
     'https://youtu.be/CEVXcP3VC3Y', // tyler igors theme
     'https://youtu.be/9AXXSa8YEic', // the decline (live)
-    'https://youtu.be/LYWpFs8Na9k', // badcop womanarchist
+    'https://youtu.be/LYWpFs8Na9k', // badcop+badcop womanarchist
     'https://youtu.be/urt88eX5yXo?t=1859', // earth crisis (live)
-    'https://youtu.be/bN0ciI2Fibo' // earth crisis (punk mba)
+    'https://youtu.be/bN0ciI2Fibo?t=505' // earth crisis (punk rock mba)
   ]
   return items[~~( items.length * Math.random() )]
 }

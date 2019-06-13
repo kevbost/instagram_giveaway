@@ -2,6 +2,19 @@ import styled from 'styled-components'
 import { Text } from 'rebass'
 import Highlight from 'react-highlight'
 
+export const StyledGradientWrapper = styled.div`
+  background-color: #3f4245;
+  background:
+    linear-gradient(
+      to left top,
+      rgba(0, 255, 255, 1) 0%,
+      rgba(255, 0, 255, 0.5) 50%,
+      rgba(255, 255, 0, 1) 100%
+    ),
+    /* url(./noise.svg); */
+    url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAIklEQVQoU2NkYGD4z8DAwMiAA+CUgKmnjQIUN9HGChQPAwB5swIJcl6NNwAAAABJRU5ErkJggg==");
+`
+
 // eslint-disable-next-line space-in-parens
 export const CodeContainer = styled(Highlight).attrs({
   className: 'js'
