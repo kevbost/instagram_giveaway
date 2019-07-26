@@ -1,4 +1,4 @@
-/* eslint-disable-next-line no-var */
+/* eslint-disable no-var,newline-before-return */
 var removeDuplicates = true
 
 /**
@@ -21,11 +21,11 @@ var removeDuplicates = true
  *
  */
 
-/* eslint-disable no-var,newline-before-return */
-var shouldConsoleClear = true
+var debug = false
 var loadMoreButtonSelector = '[aria-label="Load more comments"]'
 var loadingSvgSelector = 'article svg'
 var userNameSelector = 'body > span#react-root > section > main article li h3'
+var scrollContainerSelector = 'body > span#react-root > section > main article ul'
 
 var errorStyle = 'background: red; color: white; font-size: x-large'
 var infoStyle = 'background: green; color: white; font-size: x-large'
@@ -35,13 +35,14 @@ var counter = '-'
 var commentCount = 0
 var prevCommentCount = 0
 var loadingCount = 0
-var loadingLimitBreak = 10
+var tickCount = 0
+var loadingLimitBreak = 30
 var urlSinglePost = /(com\/p\/.*)/
 var { log } = console
 var { clear } = console
 
 var clearConsole = () => {
-  shouldConsoleClear ? clear() : null
+  !debug ? clear() : null
 }
 
 var reset = ( name ) => {
@@ -52,7 +53,7 @@ var reset = ( name ) => {
 var loadingSpinner = () => {
   counter==='-'?counter='/':counter==='/'?counter='- ':counter==='- '?counter='\\':counter==='\\'&&( counter='-' )
   log( `Comments: ${commentCount}` )
-  shouldConsoleClear && log( `Loading... ${counter}` )
+  !debug && log( `Loading... ${counter}` )
 }
 
 var interval = setInterval( () => {
@@ -61,8 +62,11 @@ var interval = setInterval( () => {
   const button = document.querySelector( loadMoreButtonSelector )
   const loadingSvg = document.querySelectorAll( loadingSvgSelector )
   const testedUrlBool = urlSinglePost.test( window.location.href )
+  const scrollContainer = document.querySelector( scrollContainerSelector )
 
   prevCommentCount = commentLength
+  scrollContainer ? scrollContainer.scrollTop = scrollContainer.scrollHeight : null
+  tickCount++
 
   if ( testedUrlBool && articleLength > 1 ) {
     reset( interval )
@@ -84,10 +88,20 @@ var interval = setInterval( () => {
     return
   } else if ( button && prevCommentCount !== commentCount ) { // check if the new comment button is stuck
     loadingCount = 0
+    tickCount = 0
     clearConsole()
     loadingSpinner() // super cool loading spinner, dont judge me
     commentCount = commentLength
     return button.click()
+  } else if ( debug && tickCount <= 10 ) {
+    return log( 'DEBUG', {
+      tickCount: tickCount,
+      loadingCount: loadingCount,
+      button: Boolean( button ),
+      prevCommentCount: prevCommentCount,
+      commentCount: commentCount,
+      'button && prevCommentCount !== commentCount': button && prevCommentCount !== commentCount
+    })
   } else {
     reset( interval )
     return isolateUsernames( [ ...document.querySelectorAll( userNameSelector ) ] )
@@ -135,8 +149,8 @@ var pickWinner = ( people, totalComments ) => {
   const num = people.length
   const WINNER = people[Math.floor( Math.random()*num )]
   reset( interval )
-  loadingCount >= loadingLimitBreak && log( '%cError: comments stopped loading properly, please review results.', errorStyle )
-  log( `${commentCount} total comments (excludes replies, includes duplicates)` )
+  loadingCount >= loadingLimitBreak && log( '%cError: comments stopped loading properly, please review results.\n\nYou can most likely just paste the code again WITHOUT reloading.', errorStyle )
+  log( `${totalComments} total comments (excludes replies, includes duplicates)` )
   log( removeDuplicates ? `${totalComments - people.length} duplicate commenters removed` : 'duplicates not removed' )
   log( `%cAnd the randomly selected winner out of ${num} ${num === 1 ? 'entry' : 'entries'} is...\n\n${WINNER.toUpperCase()} !!!!`, successStyle )
   log( `%chttps://www.instagram.com/${WINNER}/`, 'font-size: large' )
