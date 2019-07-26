@@ -29,6 +29,7 @@ var scrollContainerSelector = 'body > span#react-root > section > main article u
 
 var errorStyle = 'background: red; color: white; font-size: x-large'
 var infoStyle = 'background: green; color: white; font-size: x-large'
+var warningStyle = 'background: green; color: white; font-size: large'
 var successStyle = 'background: #ffd052; color: black; font-size: x-large'
 
 var counter = '-'
@@ -148,8 +149,11 @@ var pickWinner = ( people, totalComments ) => {
   // pick the winner! peow peow peeooowwww
   const num = people.length
   const WINNER = people[Math.floor( Math.random()*num )]
+  const button = document.querySelector( loadMoreButtonSelector )
+  const loadingSvg = document.querySelectorAll( loadingSvgSelector )
   reset( interval )
   loadingCount >= loadingLimitBreak && log( '%cError: comments stopped loading properly, please review results.\n\nYou can most likely just paste the code again WITHOUT reloading.', errorStyle )
+  Boolean( button || loadingSvg.length ) && log( '%cWarning: button to load more comments is still visible. This is probably because of a bug where IG enters an inescapable infinite loop by loading the same comments over and over.\n\nRegardless, run the script again just to make sure (WITHOUT reloading).\n\nIf nothing changes or if it loads comments you\'ve seen before, use the winner output below.', warningStyle )
   log( `${totalComments} total comments (excludes replies, includes duplicates)` )
   log( removeDuplicates ? `${totalComments - people.length} duplicate commenters removed` : 'duplicates not removed' )
   log( `%cAnd the randomly selected winner out of ${num} ${num === 1 ? 'entry' : 'entries'} is...\n\n${WINNER.toUpperCase()} !!!!`, successStyle )
