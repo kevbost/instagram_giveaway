@@ -1,6 +1,6 @@
 import React from 'react'
 import autobind from 'react-autobind'
-import { Flex, Box, Text } from 'rebass'
+import { Flex, Box, Text } from 'rebass/styled-components'
 import copyToClipboard from '../../utils/copyToClipboard'
 import AnimatedText from './components/AnimatedText'
 import Checkbox from './components/Checkbox'

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Text } from 'rebass'
+import { Text } from 'rebass/styled-components'
 import Highlight from 'react-highlight'
 
 export const StyledGradientWrapper = styled.div`

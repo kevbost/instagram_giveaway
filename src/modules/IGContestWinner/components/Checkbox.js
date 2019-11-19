@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import autobind from 'react-autobind'
 import styled, { css } from 'styled-components'
-import { Flex, Box, Text } from 'rebass'
+import { Flex, Box, Text } from 'rebass/styled-components'
 
 
 const vars = {
