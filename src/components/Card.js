@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Box } from 'rebass'
+import { Box } from 'rebass/styled-components'
 
 // eslint-disable-next-line space-in-parens
 const Card = styled(Box)`
