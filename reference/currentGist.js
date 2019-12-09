@@ -24,8 +24,8 @@ var removeDuplicates = true
 var debug = false
 var loadMoreButtonSelector = '[aria-label="Load more comments"]'
 var loadingSvgSelector = 'article svg'
-var userNameSelector = 'body > span#react-root > section > main article li h3'
-var scrollContainerSelector = 'body > span#react-root > section > main article ul'
+var userNameSelector = 'body > div#react-root > section > main article li h3'
+var scrollContainerSelector = 'body > div#react-root > section > main article ul'
 
 var errorStyle = 'background: red; color: white; font-size: x-large'
 var infoStyle = 'background: green; color: white; font-size: x-large'
@@ -64,6 +64,17 @@ var interval = setInterval( () => {
   const loadingSvg = document.querySelectorAll( loadingSvgSelector )
   const testedUrlBool = urlSinglePost.test( window.location.href )
   const scrollContainer = document.querySelector( scrollContainerSelector )
+
+  if ( debug ) {
+    log({
+      articleLength,
+      commentLength,
+      button,
+      loadingSvg,
+      testedUrlBool,
+      scrollContainer
+    })
+  }
 
   prevCommentCount = commentLength
   scrollContainer ? scrollContainer.scrollTop = scrollContainer.scrollHeight : null
