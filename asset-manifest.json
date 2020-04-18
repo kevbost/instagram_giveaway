@@ -1,25 +1,26 @@
 {
   "files": {
-    "main.css": "/instagram_giveaway/static/css/main.da3b8349.chunk.css",
-    "main.js": "/instagram_giveaway/static/js/main.7e3ae346.chunk.js",
-    "main.js.map": "/instagram_giveaway/static/js/main.7e3ae346.chunk.js.map",
-    "runtime-main.js": "/instagram_giveaway/static/js/runtime-main.01b36ce9.js",
-    "runtime-main.js.map": "/instagram_giveaway/static/js/runtime-main.01b36ce9.js.map",
-    "static/css/2.ad8e7604.chunk.css": "/instagram_giveaway/static/css/2.ad8e7604.chunk.css",
-    "static/js/2.dffaaa43.chunk.js": "/instagram_giveaway/static/js/2.dffaaa43.chunk.js",
-    "static/js/2.dffaaa43.chunk.js.map": "/instagram_giveaway/static/js/2.dffaaa43.chunk.js.map",
+    "main.css": "/instagram_giveaway/static/css/main.6abae2d2.chunk.css",
+    "main.js": "/instagram_giveaway/static/js/main.47c6ec7c.chunk.js",
+    "main.js.map": "/instagram_giveaway/static/js/main.47c6ec7c.chunk.js.map",
+    "runtime-main.js": "/instagram_giveaway/static/js/runtime-main.a34269ac.js",
+    "runtime-main.js.map": "/instagram_giveaway/static/js/runtime-main.a34269ac.js.map",
+    "static/css/2.3d5a57c6.chunk.css": "/instagram_giveaway/static/css/2.3d5a57c6.chunk.css",
+    "static/js/2.57e314d8.chunk.js": "/instagram_giveaway/static/js/2.57e314d8.chunk.js",
+    "static/js/2.57e314d8.chunk.js.map": "/instagram_giveaway/static/js/2.57e314d8.chunk.js.map",
     "index.html": "/instagram_giveaway/index.html",
-    "precache-manifest.5d2bb82dc06ebd36f82a85eb682c3322.js": "/instagram_giveaway/precache-manifest.5d2bb82dc06ebd36f82a85eb682c3322.js",
+    "precache-manifest.bcc2d90d32d8669e3a711016f1e45f3f.js": "/instagram_giveaway/precache-manifest.bcc2d90d32d8669e3a711016f1e45f3f.js",
     "service-worker.js": "/instagram_giveaway/service-worker.js",
-    "static/css/2.ad8e7604.chunk.css.map": "/instagram_giveaway/static/css/2.ad8e7604.chunk.css.map",
-    "static/css/main.da3b8349.chunk.css.map": "/instagram_giveaway/static/css/main.da3b8349.chunk.css.map",
-    "static/js/2.dffaaa43.chunk.js.LICENSE": "/instagram_giveaway/static/js/2.dffaaa43.chunk.js.LICENSE"
+    "static/css/2.3d5a57c6.chunk.css.map": "/instagram_giveaway/static/css/2.3d5a57c6.chunk.css.map",
+    "static/css/main.6abae2d2.chunk.css.map": "/instagram_giveaway/static/css/main.6abae2d2.chunk.css.map",
+    "static/js/2.57e314d8.chunk.js.LICENSE.txt": "/instagram_giveaway/static/js/2.57e314d8.chunk.js.LICENSE.txt",
+    "static/media/font-styles.css": "/instagram_giveaway/static/media/Montserrat-Regular.a8a11736.ttf"
   },
   "entrypoints": [
-    "static/js/runtime-main.01b36ce9.js",
-    "static/css/2.ad8e7604.chunk.css",
-    "static/js/2.dffaaa43.chunk.js",
-    "static/css/main.da3b8349.chunk.css",
-    "static/js/main.7e3ae346.chunk.js"
+    "static/js/runtime-main.a34269ac.js",
+    "static/css/2.3d5a57c6.chunk.css",
+    "static/js/2.57e314d8.chunk.js",
+    "static/css/main.6abae2d2.chunk.css",
+    "static/js/main.47c6ec7c.chunk.js"
   ]
 }
