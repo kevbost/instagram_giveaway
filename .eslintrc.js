@@ -77,16 +77,7 @@ module.exports = {
       }
     ],
     "no-useless-concat": "error",
-    "prefer-destructuring": [
-      "error",
-      {
-        "array": false,
-        "object": false
-      }, {
-        "enforceForRenamedProperties": false,
-        "enforceForComputedProperties": false
-      }
-    ],
+    "prefer-destructuring": ["error", { "object": true, "array": false }],
     "yoda": "error",
     "array-bracket-spacing": [
       "error",
