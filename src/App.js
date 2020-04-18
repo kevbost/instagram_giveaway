@@ -3,6 +3,7 @@ import autobind from 'react-autobind'
 import GlobalStyle from './utils/GlobalStyle'
 import GithubCorner from './components/GithubCorner'
 import IGContestWinner from './modules/IGContestWinner'
+import './font-styles.css'
 
 class App extends Component {
   constructor() {
